@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Quality Sensor</title>
+    <style>
+        
+            /* Reset styles */
+/* ... */
+
+/* Global styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main content styles */
+main {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Index page styles */
+.index-hero {
+    background-image: url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.index-hero img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+@media (min-width: 768px) {
+    .index-hero {
+        background-image: none;
+        height: auto;
+    }
+
+    .index-hero img {
+        max-width: 100%;
+        max-height: none;
+        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    }
+
+    .index-hero img:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2) contrast(1.2);
+    }
+
+    nav li:hover a {
+        filter: brightness(1.2) contrast(1.2);
+    }
+}
+
+/* Other page styles */
+.page-content {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Index page styles */
+.index-hero {
+    background-image: url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.index-hero img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+.links {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.links a {
+    display: block;
+    margin-bottom: 10px;
+}
+@media (min-width: 768px) {
+    .index-hero {
+        background-image: none;
+        height: 100vh;
+    }
+
+    .index-hero img {
+        max-width: 100%;
+        max-height: none;
+    }
+}
+@media (min-width: 768px) {
+    .index-hero img {
+        max-width: 100%;
+        max-height: none;
+        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    }
+
+    .index-hero img:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2) contrast(1.2);
+    }
+
+    .links a:hover {
+        filter: brightness(1.2) contrast(1.2);
+    }
+}
+/* Index page styles */
+.index-hero {
+    background-image: url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.index-hero img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.links {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+
+.links a {
+    display: block;
+    margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+    .index-hero {
+        background-image: none;
+        height: 100vh;
+        align-items: flex-start;
+        /* Align image to top */
+    }
+
+    .index-hero img {
+        max-width: 80%;
+        max-height: 80%;
+        margin-top: 10vh;
+        /* Add some top margin */
+        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    }
+
+    .index-hero img:hover {
+        transform: scale(1.1);
+        filter: brightness(1.2) contrast(1.2);
+    }
+
+    .links a:hover {
+        filter: brightness(1.2) contrast(1.2);
+    }
+}
+        
+    </style>
+</head>
+
+<body>
+    <main>
+        <div class="index-hero">
+  <img src="/images/hero.jpg" alt="Air Quality Sensor">
+  <div class="links">
+    <a href="/airqualitysensor">Air Quality Sensor</a>
+    <a href="/about">About</a>
+  </div>
+</div>
+    </main>
+</body>
+
+</html>

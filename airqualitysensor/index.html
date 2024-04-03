@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Air Quality Sensor</title>
+    <style>
+        /* Reset styles */
+/* ... */
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Black.woff') format('woff');
+    font-weight: black;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Regular.woff') format('woff');
+    font-weight: regular;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Medium.woff') format('woff');
+    font-weight: medium;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Light.woff') format('woff');
+    font-weight: light;
+    font-style: normal;
+}
+/* Global styles */
+body {
+    font-family: "work_sans", sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    position: relative;
+    /* To position the .index-hero absolutely */
+    height: 80vh;
+    /* Set container's height to fill the entire viewport */
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main content styles */
+main {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Index page styles */
+.index-hero {
+    background-image: url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* Change to absolute positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.index-hero img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+
+/* Other page styles */
+.page-content {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Index page styles */
+.index-hero {
+    background-image: url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: 50%;
+    min-height: 50%;
+}
+
+.index-hero img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+}
+
+.links {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+
+}
+
+.links a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    background-color: black;
+    color:#fff;
+    padding-left:5px;
+    padding-right: 5px;
+}
+
+
+
+
+@media (min-width: 512px) {
+    .index-hero {
+        background-image: none;
+        align-items: flex-start;
+        /* Align image to top */
+    }
+
+    .index-hero img {
+
+        /* Add some top margin */
+        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        display: block;
+    }
+
+    .index-hero img:hover {
+        transform: scale(1.01);
+        filter: brightness(1.02) contrast(1.1);
+    }
+
+    .links a:hover {
+        
+        filter: brightness(1.2) contrast(1.2);
+    }
+}
+.inline-image{
+    max-width: 100%;
+}
+.spacer{
+    min-height: 20px;
+}
+    </style>
+</head>
+
+<body>
+ 
+    <main>
+        <div class="page-content">
+  <h1>Air Quality Sensor</h1>
+<img src="/images/hero-page.png" class="inline-image" >
+Air is an invisible life support system that we mostly give for granted. With this sensor people will be able to monitor their indoor air quality, augmenting their senses to be able to perceive the quality of the air.
+<br><br> 
+While most IoT sensors today communicate with the internet, to allow data accessibility from different touchpoints (but often to just collect and mine data without user knowledge or consent), this sensor wants to be transparent and allow people, that are looking for it, to easily grasp where the data resides, and what is the information flow of the sensor. 
+<br><br> 
+The software component of the sensor (probably resides on people's personal computer) is able to read the data from the sensor and provide a view that facilitates the discovery of patterns or facilitates the search of specific data points, augmenting understanding.
+</div>
+        <div class="spacer"></div>
+    </main>
+    <div class="links">
+        <a href="/">Home</a>
+    </div>
+</body>
+
+</html>

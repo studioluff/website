@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <style>
+        /* Reset styles */
+/* ... */
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Black.woff') format('woff');
+    font-weight: black;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Regular.woff') format('woff');
+    font-weight: regular;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Medium.woff') format('woff');
+    font-weight: medium;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'work_sans';
+    src: url('/typefaces/WorkSans-Light.woff') format('woff');
+    font-weight: light;
+    font-style: normal;
+}
+/* Global styles */
+body {
+    font-family: "work_sans", sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container {
+    position: relative;
+    /* To position the .index-hero absolutely */
+    height: 80vh;
+    /* Set container's height to fill the entire viewport */
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav li {
+    margin-right: 1rem;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main content styles */
+main {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Index page styles */
+.index-hero {
+    background-image: url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* Change to absolute positioning */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.index-hero img {
+    max-width: 80%;
+    max-height: 80%;
+}
+
+
+/* Other page styles */
+.page-content {
+    max-width: 720px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Index page styles */
+.index-hero {
+    background-image: url("/images/hero-mobile.jpg");
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    min-width: 50%;
+    min-height: 50%;
+}
+
+.index-hero img {
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+}
+
+.links {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    text-decoration: none;
+
+}
+
+.links a {
+    display: block;
+    margin-bottom: 10px;
+    text-decoration: none;
+    background-color: black;
+    color:#fff;
+    padding-left:5px;
+    padding-right: 5px;
+}
+
+
+
+
+@media (min-width: 512px) {
+    .index-hero {
+        background-image: none;
+        align-items: flex-start;
+        /* Align image to top */
+    }
+
+    .index-hero img {
+
+        /* Add some top margin */
+        transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+        display: block;
+    }
+
+    .index-hero img:hover {
+        transform: scale(1.01);
+        filter: brightness(1.02) contrast(1.1);
+    }
+
+    .links a:hover {
+        
+        filter: brightness(1.2) contrast(1.2);
+    }
+}
+.inline-image{
+    max-width: 100%;
+}
+.spacer{
+    min-height: 20px;
+}
+    </style>
+</head>
+
+<body>
+ 
+    <main>
+        <div class="page-content">
+  <h1>About</h1>
+  <p><b>Studio LUFF</b> is a studio/practice that advocates for an alternative approach to technology that is driven by curiosity, creativity, community and sustainability. 
+<br><br>
+We address challenges in the technology space with tangible alternatives and physical products, rejecting convenience culture and the obsession for efficiency.
+<br><br>
+We create interactive experiences rooted in the physical material and physical space that are enabled by digital technologies at the service of empowering people's ability to sense, learn and manipulate the world they are surrounded. The things we craft are long lasting, systematically thought, harmonious, transparent, environmentally and empathy centered. 
+<br><br>
+We are here to inspire the curious, the sensitive, the day dreamer, the rule breaker, the hacker, the maker, the researcher, the artist, the inquisitive. </p>
+  <!-- Add your content here -->
+</div>
+        <div class="spacer"></div>
+    </main>
+    <div class="links">
+        <a href="/">Home</a>
+    </div>
+</body>
+
+</html>
