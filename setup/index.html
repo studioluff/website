@@ -191,10 +191,101 @@ main {
 <body>
  
     <main>
-        <div class="page-content">
+        <style>
+  label {
+        display: inline-block;
+        width: 100px; /* adjust the width as needed */
+        margin-right: 10px; /* adjust the spacing as needed */
+        text-align: right;
+        font-size: 18px;
+      }
+      button {
+        text-decoration:none;
+         margin-top:25px;
+        cursor:pointer;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 15px;
+        gap: 0.2em;
+        border-radius: 4px; 
+        background-color: #000;
+        color:#fff;
+       
+        border: 1px solid #ffffffff; 
+      }
+
+        button:hover {
+          background-color: #000; 
+         
+        } 
+     
+      .column{
+        max-width: 500px;
+        margin:25px;
+        line-height: 1.5;
+        margin-bottom: 50px;
+        font-size: 15px;
+      }
+      /* .container{
+        max-width: 600px;
+        padding:0px;
+        background-color: #fafafa;
+        max-width: 600px;
+        height:100%;
+        position: absolute;;
+      } */
+      .pad{
+        padding:10px;
+      }
+      input{
+        width:300px;
+      }
+  </style>
+<div class="page-content">
   <h1>Setup</h1>
-  <p>Instructions for setting up the Air Quality Sensor.</p>
-  <!-- Add your content here -->
+   <div class ="container">
+      <div class ="pad">
+          <h2>Config file generation</h2>
+          <div class="column">
+          This section provides instructions for generating a configuration file for your air quality sensor using the information you provide. Please note that this data is kept local and is never transmitted to the internet.
+          <br><br>
+          Use the form below to generate a configuration file based on the information you input. The config file, called "wifi_credentials.txt" must be placed in a folder named "template" within the root directory of the SD card. If the "template" folder does not already exist, create one before copying the config file into it.
+          </div>
+          <label for="ssid">SSID:</label>
+          <input type="text" id="ssid" name="ssid"><br><br>
+          <label for="pass">Password:</label>
+          <input type="password" id="pass" name="pass"><br><br>
+          <label for="localname:">Sensor name:</label>
+          <input type="text" id="localname" name="localname"><br><br>
+          <button onclick="generateWifiCredentials()">Generate</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      function generateTimeConfig() {
+        const date = new Date();
+        const timestamp = date.getTime() / 1000;
+        const text = `timestamp: ${timestamp}`;
+        const filename = "time_config.txt";
+        downloadTextFile(text, filename);
+      }
+      function generateWifiCredentials() {
+        const ssid = document.getElementById("ssid").value;
+        const pass = document.getElementById("pass").value;
+        const text = `ssid:${ssid}\npass:${pass}`;
+        const filename = "wifi_credentials.txt";
+        downloadTextFile(text, filename);
+      }
+      function downloadTextFile(text, filename) {
+        const blob = new Blob([text], {type: "text/plain"});
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement("a");
+        link.download = filename;
+        link.href = url;
+        link.click();
+      }
+    </script>
 </div>
         <div class="spacer"></div>
     </main>
