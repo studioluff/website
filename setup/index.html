@@ -273,7 +273,8 @@ main {
       function generateWifiCredentials() {
         const ssid = document.getElementById("ssid").value;
         const pass = document.getElementById("pass").value;
-        const text = `ssid:${ssid}\npass:${pass}`;
+        const localname = document.getElementById("localname").value;
+        const text = `ssid:${ssid}\npass:${pass}\nlocalname:${localname}`;
         const filename = "wifi_credentials.txt";
         downloadTextFile(text, filename);
       }
