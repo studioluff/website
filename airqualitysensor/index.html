@@ -9,43 +9,48 @@
         /* Reset styles */
 /* ... */
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Black.woff') format('woff');
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Black.woff') format('woff'),
+    url('/typefaces/Nunito-Black.ttf') format('truetype'),
+    url('/typefaces/Nunito-Black.woff2') format('woff2');
     font-weight: black;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Bold.woff') format('woff');
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Bold.woff') format('woff'),
+    url('/typefaces/Nunito-Bold.ttf') format('truetype'),
+    url('/typefaces/Nunito-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Regular.woff') format('woff');
-    font-weight: regular;
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Regular.woff') format('woff'),
+   url('/typefaces/Nunito-Regular.ttf') format('truetype'),
+    url('/typefaces/Nunito-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Medium.woff') format('woff');
-    font-weight: medium;
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Light.woff2') format('woff2'),
+        url('/typefaces/Nunito-Light.woff') format('woff'),
+        url('/typefaces/Nunito-Light.ttf') format('truetype');
+    font-weight: 300;
+
     font-style: normal;
 }
-@font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Light.woff') format('woff');
-    font-weight: light;
-    font-style: normal;
-}
+
 /* Global styles */
 body {
-    font-family: "work_sans", sans-serif;
+    font-family: "nunito_sans", sans-serif;
     margin: 0;
     padding: 0;
+    font-weight: 300;
 
 }
 
@@ -61,6 +66,7 @@ header {
     background-color: #333;
     color: #fff;
     padding: 1rem;
+    
 }
 
 nav ul {
@@ -78,14 +84,22 @@ nav a {
     color: #fff;
     text-decoration: none;
 }
-
+h1{
+    margin-top:75px;
+    margin-bottom: 4px;
+}
 /* Main content styles */
 main {
     max-width: 720px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
-
+.subtitle{
+    font-weight: 400;
+    font-size: 1.05em;
+    margin-bottom:28px;
+    margin-top:16px;
+}
 /* Index page styles */
 .index-hero {
     background-image: url("/images/hero-mobile.jpg");
@@ -147,8 +161,8 @@ main {
     margin-bottom: 10px;
     text-decoration: none;
     background-color: black;
-    color:#fff;
-    padding-left:5px;
+    color: #fff;
+    padding-left: 5px;
     padding-right: 5px;
 }
 
@@ -175,14 +189,19 @@ main {
     }
 
     .links a:hover {
-        
+
         filter: brightness(1.2) contrast(1.2);
     }
 }
-.inline-image{
-    max-width: 100%;
+.bold{
+    font-weight: bold;
 }
-.spacer{
+.inline-image {
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+
+.spacer {
     min-height: 20px;
 }
     </style>
@@ -193,12 +212,18 @@ main {
     <main>
         <div class="page-content">
   <h1>Air Quality Sensor</h1>
-<img src="/images/hero-page.png" class="inline-image" >
-Air is an invisible life support system that we mostly give for granted. With this sensor people will be able to monitor their indoor air quality, augmenting their senses to be able to perceive the quality of the air.
+<div class="subtitle">A beautiful Air Quality Sensor for the home, customizable, hackable, open.</div>
+<p>The Air Quality Sensor by studio LUFF is a beautiful home object that helps you discover how air quality is affecting your environment. Air is an invisible life support system that we mostly give for granted. With this sensor people will be able to monitor their indoor air quality, augmenting their senses to be able to perceive the quality of the air.</p>
+<br>
+<div style="text-align:left;">Check out the project on <a href="https://www.kickstarter.com/projects/pierdr/air-quality-sensor-by-studio-luff"><img src="/images/kickstarter-logo-green.png" style="width: 240px;position: relative;top: 7px;"></div> </a>
 <br><br> 
-While most IoT sensors today communicate with the internet, to allow data accessibility from different touchpoints (but often to just collect and mine data without user knowledge or consent), this sensor wants to be transparent and allow people, that are looking for it, to easily grasp where the data resides, and what is the information flow of the sensor. 
 <br><br> 
-The software component of the sensor (probably resides on people's personal computer) is able to read the data from the sensor and provide a view that facilitates the discovery of patterns or facilitates the search of specific data points, augmenting understanding.
+<img src="/images/hero-page.jpg" class="inline-image" >
+<br>
+<!-- <img src="/images/img1.jpg"  class="inline-image"  alt="image of the air quality sensor"> -->
+<img src="/images/sensor.jpg"  class="inline-image"  alt="image of the air quality sensor">
+<h3>Acknowledgments </h3>
+<p>This project would have not be possible without the relentless help from close collaborators that have inputed energies and supported me in concepting, designing, strategizing, engineering and manufacturing this product.</p>
 </div>
         <div class="spacer"></div>
     </main>

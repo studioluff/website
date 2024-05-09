@@ -10,43 +10,48 @@
             /* Reset styles */
 /* ... */
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Black.woff') format('woff');
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Black.woff') format('woff'),
+    url('/typefaces/Nunito-Black.ttf') format('truetype'),
+    url('/typefaces/Nunito-Black.woff2') format('woff2');
     font-weight: black;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Bold.woff') format('woff');
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Bold.woff') format('woff'),
+    url('/typefaces/Nunito-Bold.ttf') format('truetype'),
+    url('/typefaces/Nunito-Bold.woff2') format('woff2');
     font-weight: bold;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Regular.woff') format('woff');
-    font-weight: regular;
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Regular.woff') format('woff'),
+   url('/typefaces/Nunito-Regular.ttf') format('truetype'),
+    url('/typefaces/Nunito-Regular.woff2') format('woff2');
+    font-weight: 400;
     font-style: normal;
 }
 
 @font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Medium.woff') format('woff');
-    font-weight: medium;
+    font-family: 'nunito_sans';
+    src: url('/typefaces/Nunito-Light.woff2') format('woff2'),
+        url('/typefaces/Nunito-Light.woff') format('woff'),
+        url('/typefaces/Nunito-Light.ttf') format('truetype');
+    font-weight: 300;
+
     font-style: normal;
 }
-@font-face {
-    font-family: 'work_sans';
-    src: url('/typefaces/WorkSans-Light.woff') format('woff');
-    font-weight: light;
-    font-style: normal;
-}
+
 /* Global styles */
 body {
-    font-family: "work_sans", sans-serif;
+    font-family: "nunito_sans", sans-serif;
     margin: 0;
     padding: 0;
+    font-weight: 300;
 
 }
 
@@ -62,6 +67,7 @@ header {
     background-color: #333;
     color: #fff;
     padding: 1rem;
+    
 }
 
 nav ul {
@@ -79,14 +85,22 @@ nav a {
     color: #fff;
     text-decoration: none;
 }
-
+h1{
+    margin-top:75px;
+    margin-bottom: 4px;
+}
 /* Main content styles */
 main {
     max-width: 720px;
     margin: 2rem auto;
     padding: 0 1rem;
 }
-
+.subtitle{
+    font-weight: 400;
+    font-size: 1.05em;
+    margin-bottom:28px;
+    margin-top:16px;
+}
 /* Index page styles */
 .index-hero {
     background-image: url("/images/hero-mobile.jpg");
@@ -148,8 +162,8 @@ main {
     margin-bottom: 10px;
     text-decoration: none;
     background-color: black;
-    color:#fff;
-    padding-left:5px;
+    color: #fff;
+    padding-left: 5px;
     padding-right: 5px;
 }
 
@@ -176,14 +190,19 @@ main {
     }
 
     .links a:hover {
-        
+
         filter: brightness(1.2) contrast(1.2);
     }
 }
-.inline-image{
-    max-width: 100%;
+.bold{
+    font-weight: bold;
 }
-.spacer{
+.inline-image {
+    max-width: 100%;
+    margin-bottom: 18px;
+}
+
+.spacer {
     min-height: 20px;
 }
         
@@ -194,7 +213,7 @@ main {
     <main>
         <div class = "container">
 <div class="index-hero">
-  <img src="/images/hero.jpg" alt="Air Quality Sensor">
+  <a href="https://www.kickstarter.com/projects/pierdr/air-quality-sensor-by-studio-luff" target="_blank"><img src="/images/hero.jpg" alt="Air Quality Sensor">
 </div>
 </div>
 <div class="links">
