@@ -306,7 +306,7 @@ main {
         <label for="ssid">SSID:</label>
         <input type="text" id="ssid" name="ssid"><br><br>
         <label for="pass">Password:</label>
-        <input type="password" id="pass" name="pass"><br><br>
+        <input type="password" id="pass" name="pass" autocomplete="off"><br><br>
         <label for="localname:">Sensor name:</label>
         <input type="text" id="localname" name="localname"><br><br>
         <button onclick="generateWifiCredentials()">Generate</button>
@@ -337,7 +337,8 @@ main {
     const ssid = document.getElementById("ssid").value;
     const pass = document.getElementById("pass").value;
     const localname = document.getElementById("localname").value;
-    const text = `ssid:${ssid}\npass:${pass}\nlocalname:${localname}`;
+    const timeStamp = Date.now();
+    const text = `ssid:${ssid}\npass:${pass}\nlocalname:${localname}\ntimestamp:${timeStamp}`;
     const filename = "wifi_credentials.txt";
     downloadTextFile(text, filename);
   }
