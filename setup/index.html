@@ -220,7 +220,7 @@ main {
   }
   label {
     display: inline-block;
-    width: 100px; 
+    width: 25%; 
     /* adjust the width as needed */
     margin-right: 10px;
     /* adjust the spacing as needed */
@@ -268,7 +268,7 @@ main {
   }
 
   input {
-    width: 300px;
+    width: 70%;
   }
   .error {
             color: red;
@@ -360,6 +360,9 @@ main {
         }
         .alignCenter{
           text-align:center;
+        }
+        .alignRight{
+          text-align:right;
         }
         .in-line-li{
           margin-left: 10px;
@@ -469,7 +472,9 @@ main {
               <input type="text" id="localname" name="localname" placeholder="airqualitysensor">
               <span id="error-message" class="error">No special characters allowed</span><br>
               <br>
-              <button style="margin-left: 350px;" onclick="generateWifiCredentials()">Generate</button>
+              <div class="alignRight">
+              <button onclick="generateWifiCredentials()">Generate</button>
+              </div>
               </div>
             <div class="spacer"></div>
               <h3>Web Interface download</h3>
@@ -479,7 +484,7 @@ main {
               </ol>
               <br>
               <p>Once you've completed these steps,The SD Card should have the following structure and files:<br><br>
-              <div class="alignCenter"><img src="/images/filestructure.png" width="500px"></div><br><br>
+              <div class="alignCenter"><img src="/images/filestructure.png" width="100%"></div><br><br>
               Now you are ready to insert the SD card into your sensor. Connect the sensor to power, and it will connect to the local network via WiFi.</p>
     <p>To access the web interface, go to: <a href="http://airqualitysensor.local" class="reachSensorAt" target="_blank"><strong>airqualitysensor.local</strong></a></p>
               <br><br>
