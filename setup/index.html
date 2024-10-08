@@ -213,6 +213,11 @@ main {
  
     <main>
         <style>
+  body{
+  overflow: scroll;
+  color:#333;
+  font-size:1.2em;
+  }
   label {
     display: inline-block;
     width: 100px; 
@@ -220,6 +225,9 @@ main {
     margin-right: 10px;
     /* adjust the spacing as needed */
     text-align: right;
+    font-size: 18px;
+  }
+  .reachLabel{
     font-size: 18px;
   }
 
@@ -234,7 +242,7 @@ main {
     gap: 0.2em;
     border-radius: 4px;
     background-color: #000;
-    color: #555;
+    color: #fff;
 
     border: 1px solid #ffffffff;
   }
@@ -243,13 +251,16 @@ main {
     background-color: #000;
 
   }
+  h1{
+    margin-bottom:50px;
+  }
 
   .column {
     max-width: 500px;
     margin: 25px;
     line-height: 1.5;
     margin-bottom: 50px;
-    font-size: 15px;
+    font-size:0.88em;
   }
 
   .pad {
@@ -259,6 +270,16 @@ main {
   input {
     width: 300px;
   }
+  .error {
+            color: red;
+            display: none;
+            margin-top: 5px;
+            margin-left:110px;
+            font-size:0.85em;
+        }
+        .invalid-input {
+            outline: 2px solid red;
+        }
   .photo{
     margin-left:42px;
     margin-top:10px;
@@ -297,88 +318,261 @@ main {
   .button-caption {
     font-size: 12px;
   }
+  .section-title {
+            cursor: pointer;
+           
+        }
+        .section-title:hover {
+            text-decoration:underline;
+        }
+ .section-title::before,
+.section-title.active::before {
+  content: '';
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  margin-left: 10px;
+  vertical-align: middle;
+  float: right;
+}
+
+.section-title::before {
+  border-top: 8px solid currentColor;
+  border-bottom: none;
+}
+
+.section-title.active::before {
+  border-bottom: 8px solid currentColor;
+  border-top: none;
+}
+
+        .section-content {
+            display: none;
+
+        }
+        li{
+          margin-bottom: 2em;
+        }
+        .section{
+          border:1px solid #efefef;
+        }
+        .alignCenter{
+          text-align:center;
+        }
+        .in-line-li{
+          margin-left: 10px;
+  list-style-type: none;
+  font-family: monospace;
+  margin-bottom: 1em;
+        }
 </style>
+<script>
+  function generateTimeConfig() {
+    const date = new Date();
+    const timestamp = date.getTime() / 1000;
+    const text = `timestamp: ${timestamp}`;
+    const filename = "time_config.txt";
+    downloadTextFile(text, filename);
+  }
+  function generateWifiCredentials() {
+    const ssid = document.getElementById("ssid").value;
+    const pass = document.getElementById("pass").value;
+    const localname = document.getElementById("localname").value;
+    const timeStamp = Date.now();
+    const text = `ssid:${ssid}\npass:${pass}\nlocalname:${localname}\ntimestamp:${timeStamp}`;
+    const filename = "wifi_credentials.txt";
+    downloadTextFile(text, filename);
+  }
+  function downloadTextFile(text, filename) {
+    const blob = new Blob([text], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.download = filename;
+    link.href = url;
+    link.click();
+  }
+</script>
 <div class="page-content">
-  <h1>Setup</h1>
-    <div class="video-container">
-    <div class="custom-video">
-      <iframe width="720" height="405" src="https://www.youtube-nocookie.com/embed/GcqRvpo4QCA?si=Y9vo8dgUJ3mANisT" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
-    </div>
-  </div>
-  <div class="button-container">
-    <button class="custom-button" onclick="seekVideo(0)">
-      <span class="button-icon">📚</span>
-      <span class="button-caption">Getting started</span>
-    </button>
-    <button class="custom-button" onclick="seekVideo(30)">
-      <span class="button-icon">🔧</span>
-      <span class="button-caption">Mount Sensor</span>
-    </button>
-    <button class="custom-button" onclick="seekVideo(60)">
-      <span class="button-icon">🌐</span>
-      <span class="button-caption">Connect to Network</span>
-    </button>
-    <button class="custom-button" onclick="seekVideo(90)">
-      <span class="button-icon">🔍</span>
-      <span class="button-caption">Troubleshoot</span>
-    </button>
-    <button class="custom-button" onclick="seekVideo(120)">
-      <span class="button-icon">🎨</span>
-      <span class="button-caption">Other Settings</span>
-    </button>
-  </div>
-  <div class="container">
-    <div class="pad">
-      <h2>Setting up your Air Quality Sensor</h2>
-      <div class="column">
-        Follow these steps to get started with your air quality
-        sensor:<br><br>
-        1. Connect the sensor to the compute disk.
-        <img class="photo" src="/images/IMG_7248.JPG" width="400px"><br><br>
-        2. Connect the usb cable to power the board
-        <img class="photo"  src="/images/IMG_7258.JPG" width="400px"><br><br>
+  <h1>Air Quality Sensor - User Guide</h1>
+  <img src="/images/long-image.jpg" width="100%">
+    <div class="pad section">
+     <h2 class="section-title">Quick Start</h2>
+      <div class="section-content">
+        <div class="column">
+          <p>Follow these steps to get started with your air quality sensor:</p><br>
+              <li>Unbox your air quality sensor. You'll find the sensor module and the sensor board.</li>
+              <video autoplay loop style="width:100%" webkit-playsinline playsinline>
+                    <source src="/images/sensorConnectNoAudio.mp4" type="video/mp4">
+                    <source src="/images/sensorConnectNoAudio.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+              <li> Connect the sensor module to the board</li>     
+              <img   src="/images/wideInsertUsb.jpg" width="100%">    
+              <li> Connect the USB cable to power the board. </li>
         Once you've completed these steps, your air quality sensor should be up
         and running.
+        </div>
       </div>
     </div>
-    <div class="pad">
-      <h2>Saving data on an SD card</h2>
-      <div class="column">
-        You can collect data over time using an SD card, but before you insert an SD card in your air quality sensor, you need to setup the file structure and add the config files.<br><br>
-      </div>
-      <div class="pad">
-        <h3>Config file generation</h3>
-        <div class="column">
-          This section provides instructions for generating a configuration file for your air quality sensor using the
-          information you provide. Please note that this data is kept local and is never transmitted to the internet.
-          <br><br>
-          Use the form below to generate a configuration file based on the information you input. The config file, called
-          "wifi_credentials.txt" must be placed in a folder named "config" within the root directory of the SD card. If
-          the "config" folder does not already exist, create one before copying the "wifi_credentials.txt" file into it.
+    <div class="pad section">
+      <h2 class="section-title">Understanding Your Air Quality Sensor</h2>
+        <div class="section-content">
+          <div class="column">
+            <h3>Behavior</h3>
+                <li>The dial on the Air Quality Sensor shows the current <a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank">AQI level</a>, sampled 10 times every hour by default.</li>
+                <div class="alignCenter">
+                <video autoplay loop style="width:100%" webkit-playsinline playsinline>
+                    <source src="/images/tapNoAudio.mp4" type="video/mp4">
+                    <source src="/images/tapNoAudio.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video></div>
+                <li>Simply tap the center button to see the current air quality level.</li>
+                 <video autoplay loop style="width:100%" webkit-playsinline playsinline>
+                    <source src="/images/alertNoAudio.mp4" type="video/mp4">
+                    <source src="/images/alertNoAudio.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <li>If the air quality reaches above 50 on the AQI scale, you'll be notified by a subtle animation. Tap to dismiss it.</li>
+            <h3>Learning from Your Sensor</h3>
+            <p>You can use the sensor to understand how your actions affect the health of your local environment:</p>
+            <ul>
+                <li>Observe how activities like cooking, burning wood, or lighting candles affect air quality.</li>
+                <li>Monitor external factors such as lack of wind, traffic, or wildfires that may degrade air quality.</li>
+                <li>Use this information to decide when to close windows or turn on an air purifier.</li>
+            </ul>
+          </div>
         </div>
-        <label for="ssid">SSID:</label>
-        <input type="text" id="ssid" name="ssid"><br><br>
-        <label for="pass">Password:</label>
-        <input type="password" id="pass" name="pass" autocomplete="off"><br><br>
-        <label for="localname:">Sensor name:</label>
-        <input type="text" id="localname" name="localname"><br><br>
-        <button onclick="generateWifiCredentials()">Generate</button>
-      </div>
-      <div class="spacer"></div>
-      <div class="pad">
-        <h3>Template download</h3>
-        The air quality sensor serves a web interface directly from the SD card. This is architected this way to allow you to easily customize the web interface. 
-        You can download the default template <a href="https://github.com/studioluff/airqualitysensor_template/raw/main/template.zip">here</a> and add it to the root of your SD card.
-      </div>
-      <div class="pad">
-        The SD Card should have the following structure and files:<br><br>
-        <img src="/images/filestructure.png" width="500px"><br><br>
-        Now you are ready to insert the SD card in your sensor:
-        <img class="photo" src="/images/IMG_7267.JPG" width="400px"><br><br>
-      </div>
+    </div>
+    <div class="pad section">
+      <h2 class="section-title">Saving Data on an SD Card</h2>
+        <div class="section-content">
+          <div class="column">
+            <p>To collect data over time using an SD card, you need to set up the SD card with two key elements: the WiFi configuration file and the web interface. <br> <br>
+            <img   src="/images/insertCard.jpg" width="100%">  <br>
+            To get started insert the SD Card into your computer using the provided adapter if needed.</p>
+              <h3>Config File Generation</h3>
+              <ul>
+                  <li>Use the form below to generate a WiFi configuration file named "wifi_credentials.txt".</li>
+                  <li>Create a folder named "config" in the root directory of the SD card.</li>
+                  <li>Place the "wifi_credentials.txt" file in the "config" folder.</li>
+              </ul>
+               <p><strong>Note:</strong> This data is kept local and is never transmitted to the internet.</p>
+                </div>
+                <div class="column">
+              <label for="ssid">SSID:</label>
+              <input type="text" id="ssid" name="ssid"><br><br>
+              <label for="pass">Password:</label>
+              <input type="password" id="pass" name="pass" autocomplete="off"><br><br>
+              <label for="localname:">Sensor name:</label>
+              <input type="text" id="localname" name="localname" placeholder="airqualitysensor">
+              <span id="error-message" class="error">No special characters allowed</span><br>
+              <br>
+              <button style="margin-left: 350px;" onclick="generateWifiCredentials()">Generate</button>
+              </div>
+            <div class="spacer"></div>
+              <h3>Web Interface download</h3>
+               <ol>
+                  <li>Download the default template for the web interface <a href="https://github.com/studioluff/airqualitysensor_webinterface/raw/refs/heads/main/webinterface.zip">here</a>.</li>
+                  <li>Add the folder <i>'webinterface'</i> to the root of your SD card.</li>
+              </ol>
+              <br>
+              <p>Once you've completed these steps,The SD Card should have the following structure and files:<br><br>
+              <div class="alignCenter"><img src="/images/filestructure.png" width="500px"></div><br><br>
+              Now you are ready to insert the SD card into your sensor. Connect the sensor to power, and it will connect to the local network via WiFi.</p>
+    <p>To access the web interface, go to: <a href="http://airqualitysensor.local" class="reachSensorAt" target="_blank"><strong>airqualitysensor.local</strong></a></p>
+              <br><br>
+              <p>
+              Here is a screencapture of the process to prepare the SD card:
+              </p>
+              <div class="alignCenter">
+                <video controls loop style="width:100%" webkit-playsinline playsinline>
+                    <source src="/images/ScreenRecording.mp4" type="video/mp4">
+                    <source src="/images/ScreenRecording.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video></div>
+        </div>
+    </div>
+     <div class="pad section">
+      <h2 class="section-title">Physical Mount on the Wall</h2>
+        <div class="section-content">
+          <div class="column">
+          <img src="/images/wallmounts.jpg" width="100%">
+          In the accessory bag you can find a T-screw and a double sided patch. You can use one of these or both to connect your sensor on the wall. I personally prefer to connect the sensor on the wall directly with the patch. The connector between the board and the sensor module is quite delicate and I suggest to use thin double sided tape between the sensor module and the board itself.
+            <p><strong>Note:</strong> The connector between the board and the sensor module is delicate, so handle with care during mounting.</p>
+          </div>
+        </div>
+    </div>
+    <div class="pad section">
+      <h2 class="section-title">Frequently Asked Questions</h2>
+        <div class="section-content">
+          <div class="column">
+          <h3>Can I change the frequency at which the sensor is reading?</h3>
+            <p>Yes, you can. Go into the web interface, click on the info button in the top right, and reveal the settings to adjust the frequency.</p>
+            <h3>Which SD cards are compatible with the Air Quality Sensor?</h3>
+            <p>SDSC and SDHC cards are compatible, but SDXC cards are not. We recommend using SanDisk or Transcend SD cards for best performance.</p>
+             <h3 class="faq-title">What is the coin cell battery bay on the board for?</h3>
+             <p>The coin cell battery bay is for cases where the sensor can't access the internet to get the time. In such cases, the time must be set manually. When generating the WiFi configuration file, a timestamp is added, at startup, if no internet is detected, the sensor sets its internal time based on this timestamp. The coin cell battery keeps the sensor's clock running during power shutdowns so it doesn't need to be set manually again.</p>
+            <h3>Where can I find the open-source code for the sensor?</h3>
+            <p>You can find the code at this link: [Insert link here]</p>
+             <h3>Which power adapter should I use?</h3>
+            <p>The Air Quality Sensor is designed to be versatile in terms of power supply. Virtually any standard power adapter should work effectively. During testing, the sensor has been successfully operated when connected directly to a computer's USB port, as well as when plugged into standard wall outlets using a USB-C connection.
+             <h3>I cannot access the web interface. What should I do?</h3>
+              <p>There are multiple reasons why you might not be able to access the web interface. You can run a diagnostic on your Air Quality Sensor by long-pressing for up to 10 seconds; three LEDs will light up. Here’s what they indicate:
+              <li class="in-line-li">
+    The first LED (12 o'clock) shows SD card recognition.</li>
+    <li class="in-line-li">The second LED (3 o'clock) indicates WiFi connection.</li>
+    <li class="in-line-li">The third LED (6 o'clock) shows internet connection.</li>
+            If all LEDs are green, ensure the device name matches the URL you're using. For example, if the device name is airqualitysensor_kitchen, the correct URL would be <b>http://airqualitysensor_kitchen.local</b>. </p>
+          </div>
+        </div>
+    </div>
   </div>
-</div>
-</div>
+<script>
+    document.querySelectorAll('.section-title').forEach(title => {
+        title.addEventListener('click', () => {
+            title.classList.toggle('active');
+            const content = title.nextElementSibling;
+            if (content.style.display === 'block') {
+                content.style.display = 'none';
+            } else {
+                content.style.display = 'block';
+            }
+        });
+    });
+    const input = document.getElementById('localname');
+        const links = document.querySelectorAll('.reachSensorAt');
+        const errorMessage = document.getElementById('error-message');
+
+        function isValidInput(value) {
+            // Allow only alphanumeric characters, hyphens, and underscores
+            return /^[a-zA-Z0-9-_]*$/.test(value);
+        }
+
+        function updateLinks() {
+            const inputValue = input.value.trim();
+            
+            if (isValidInput(inputValue)) {
+                const finalValue = inputValue || 'airqualitysensor';
+                links.forEach(link => {
+                    link.href = `http://${finalValue}.local`;
+                    link.textContent = `${finalValue}.local`;
+                });
+                input.classList.remove('invalid-input');
+                errorMessage.style.display = 'none';
+            } else {
+                input.classList.add('invalid-input');
+                errorMessage.style.display = 'block';
+            }
+        }
+
+        // Set initial value
+        updateLinks();
+
+        // Listen for input changes
+        input.addEventListener('input', updateLinks);
+</script>
 
         <div class="spacer"></div>
     </main>
