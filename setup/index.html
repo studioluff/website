@@ -419,6 +419,20 @@ main {
         </div>
       </div>
     </div>
+      <div class="pad section">
+      <h2 class="section-title">Physical Mount on the Wall</h2>
+        <div class="section-content">
+          <div class="column">
+         To mount the device on the wall, we strongly recommend using the T-screw provided in the accessory bag. 
+         <br><br>
+           <img src="/images/mount_wall_1.jpg" width="100%">
+           <img src="/images/mount_wall_2.jpg" width="100%">
+           <img src="/images/mount_wall_3.jpg" width="100%"><br><br>
+         A lanyard can also be used as an alternative mounting method. <br><br>
+         The connector between the board and the sensor module is delicate. Handle with care during mounting and prevent accidental falls. A fall could damage the connector and compromise the device's functionality.<br><br> While the T-screw (or nail/lanyard) serves as the primary mounting method, the double-sided adhesive patch provided in the accessory bag is offered only to prevent wobbling - it should not be used as the primary mounting solution.<br><br>
+          </div>
+        </div>
+    </div>
     <div class="pad section">
       <h2 class="section-title">Understanding Your Air Quality Sensor</h2>
         <div class="section-content">
@@ -465,11 +479,11 @@ main {
                 </div>
                 <div class="column">
               <label for="ssid">SSID:</label>
-              <input type="text" id="ssid" name="ssid"><br><br>
+              <input type="text" id="ssid" name="ssid" autocomplete="off" onfocus="this.removeAttribute('readonly');"><br><br>
               <label for="pass">Password:</label>
-              <input type="password" id="pass" name="pass" autocomplete="off"><br><br>
-              <label for="localname:">Sensor name:</label>
-              <input type="text" id="localname" name="localname" placeholder="airqualitysensor">
+              <input type="password" id="pass" name="pass" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');"><br><br>
+              <label for="localname:" >Sensor name:</label>
+              <input type="text" id="localname" name="localname" placeholder="airqualitysensor" autocomplete="off" readonly  onfocus="this.removeAttribute('readonly');">
               <span id="error-message" class="error">No special characters allowed</span><br>
               <br>
               <div class="alignRight">
@@ -499,17 +513,7 @@ main {
                 </video></div>
         </div>
     </div>
-     <div class="pad section">
-      <h2 class="section-title">Physical Mount on the Wall</h2>
-        <div class="section-content">
-          <div class="column">
-          <img src="/images/wallmounts.jpg" width="100%">
-          In the accessory bag you can find a T-screw and a double sided patch. You can use one of these or both to connect your sensor on the wall. I personally prefer to connect the sensor on the wall directly with the patch. The connector between the board and the sensor module is quite delicate and I suggest to use thin double sided tape between the sensor module and the board itself.
-            <p><strong>Note:</strong> The connector between the board and the sensor module is delicate, so handle with care during mounting.</p>
-          </div>
-        </div>
-    </div>
-    <div class="pad section">
+   <div class="pad section">
       <h2 class="section-title">Frequently Asked Questions</h2>
         <div class="section-content">
           <div class="column">
@@ -530,6 +534,10 @@ main {
     <li class="in-line-li">The second LED (3 o'clock) indicates WiFi connection.</li>
     <li class="in-line-li">The third LED (6 o'clock) shows internet connection.</li>
             If all LEDs are green, ensure the device name matches the URL you're using. For example, if the device name is airqualitysensor_kitchen, the correct URL would be <b>http://airqualitysensor_kitchen.local</b>. </p>
+            <h3>Can I remove the blue wrapping from the sensor module?</h3>
+            <p>Yes, you can.</p>
+             <h3>The connector between the Air Quality board and the sensor module broke, what should I do?</h3>
+            <p> <img src="/images/broken_sensor.jpg" width="100%">This is unfortunate, but you should be able to fix your Air Quality Sensor easily. You should find a spare connector to solder on the board in the accessory pouch. <br>If you don't have a soldering iron, drop us an email.</p>
           </div>
         </div>
     </div>
