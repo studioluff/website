@@ -222,20 +222,23 @@ main {
         padding-right: 10px;
         border: 1px solid #eee;
     }
+    ol li::marker {
+    font-weight: bold;
+}
     </style>
-<h1>Update Firmware for Air Quality Sensor</h1>
+<h1>Update Firmware of your Air Quality Sensor</h1>
 <p>To install new firmware for your Air Quality Sensor, follow these steps:</p>
 <ol>
     <li>Connect your Air Quality Sensor via USB to your computer.</li>
     <li>Ensure you have a compatible browser (Google Chrome or Microsoft Edge version 89 or later).</li>
-    <li>Go to this website: <a href="https://espressif.github.io/esptool-js/">https://espressif.github.io/esptool-js/</a></li>
+    <li>Go to this website: <a href="https://espressif.github.io/esptool-js/" target="_blank">https://espressif.github.io/esptool-js/</a></li>
     <li>Connect to your board by pressing the "Connect" button.</li>
     <li>Choose the serial port associated with your Air Quality Sensor. The port name should be similar to "usbmodem####".
         <img width="100%" src="/images/screenshot1.jpg" alt="Screenshot of the Chrome window where you can select the serial port">
     </li>
     <li>Now you need to load 4 binary files.
         <ol type="a">
-            <li>First, make sure you have downloaded the binaries from <a href="https://github.com/studioluff/airqualitysensor/releases/tag/v1.0.1">here</a>.</li>
+            <li>First, make sure you have downloaded the binaries from <a href="https://github.com/studioluff/airqualitysensor/releases/tag/v1.0.1" target="_blank">here</a>.</li>
             <li>Add the files to the interface using the "Add Files" button. Ensure the addresses are correct as they appear in the interface.
                 <table>
                     <thead>
