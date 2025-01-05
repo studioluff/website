@@ -230,16 +230,14 @@ main {
 <p>To install new firmware for your Air Quality Sensor, follow these steps:</p>
 <ol>
     <li>Connect your Air Quality Sensor via USB to your computer.</li>
-    <li>Ensure you have a compatible browser (Google Chrome or Microsoft Edge version 89 or later).</li>
-    <li>Go to this website: <a href="https://espressif.github.io/esptool-js/" target="_blank">https://espressif.github.io/esptool-js/</a></li>
-    <li>Connect to your board by pressing the "Connect" button.</li>
-    <li>Choose the serial port associated with your Air Quality Sensor. The port name should be similar to "usbmodem####".
+    <li>Go to this website: <a href="https://espressif.github.io/esptool-js/" target="_blank">https://espressif.github.io/esptool-js/</a> on a compatible browser -> Google Chrome or Microsoft Edge version 89 or later.</li>
+    <li>Connect to your board by pressing the "Connect" button and choose the serial port associated with your Air Quality Sensor. The port name should be similar to "usbmodem####".
         <img width="100%" src="/images/screenshot1.jpg" alt="Screenshot of the Chrome window where you can select the serial port">
     </li>
     <li>Now you need to load 4 binary files.
         <ol type="a">
             <li>First, make sure you have downloaded the binaries from <a href="https://github.com/studioluff/airqualitysensor/releases/download/v1.0.1/v1.0.1.zip" target="_blank">here</a>.</li>
-            <li>Add the files to the interface using the "Add Files" button. Ensure the addresses are correct as they appear in the interface.
+            <li>Add the files to the interface using the "Add Files" button. Ensure you change the addresses for each file as they appear here below:
                 <table>
                     <thead>
                         <tr>
@@ -271,7 +269,7 @@ main {
         </ol>
     </li>
     <li>Press the "Program" button.</li>
-    <li>Your board should now be ready to go.
+    <li>Now you can reset your board either by pressing the reset (RST) button on the back of your board or by reconnecting the USB cable and you should be good to go.
         <img width="100%" src="/images/screenshot3.jpg" alt="Explanation of addresses and files" style="padding-top:10px">
     </li>
 </ol>
