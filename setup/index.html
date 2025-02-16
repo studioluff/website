@@ -406,7 +406,7 @@ main {
         <div class="column">
           <p>Follow these steps to get started with your air quality sensor:</p><br>
               <li>Unbox your air quality sensor. You'll find the sensor module and the sensor board.</li>
-              <video autoplay loop style="width:100%" webkit-playsinline playsinline>
+              <video autoplay muted loop style="width:100%" webkit-playsinline playsinline>
                     <source src="/images/sensorConnectNoAudio.mp4" type="video/mp4">
                     <source src="/images/sensorConnectNoAudio.webm" type="video/webm">
                     Your browser does not support the video tag.
@@ -440,13 +440,13 @@ main {
             <h3>Behavior</h3>
                 <li>The dial on the Air Quality Sensor shows the current <a href="https://www.airnow.gov/aqi/aqi-basics/" target="_blank">AQI level</a>, sampled 10 times every hour by default.</li>
                 <div class="alignCenter">
-                <video autoplay loop style="width:100%" webkit-playsinline playsinline>
+                <video autoplay muted loop style="width:100%" muted webkit-playsinline playsinline>
                     <source src="/images/tapNoAudio.mp4" type="video/mp4">
                     <source src="/images/tapNoAudio.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video></div>
                 <li>Simply tap the center button to see the current air quality level.</li>
-                 <video autoplay loop style="width:100%" webkit-playsinline playsinline>
+                 <video autoplay muted loop style="width:100%" webkit-playsinline playsinline>
                     <source src="/images/alertNoAudio.mp4" type="video/mp4">
                     <source src="/images/alertNoAudio.webm" type="video/webm">
                     Your browser does not support the video tag.
@@ -478,7 +478,7 @@ main {
                <p><strong>Note:</strong> This data is kept local and is never transmitted to the internet.</p>
                 </div>
                 <div class="column">
-              <label for="ssid">SSID:</label>
+              <label for="ssid">Wifi name:</label>
               <input type="text" id="ssid" name="ssid" autocomplete="off" onfocus="this.removeAttribute('readonly');"><br><br>
               <label for="pass">Password:</label>
               <input type="password" id="pass" name="pass" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');"><br><br>
@@ -494,7 +494,7 @@ main {
               <h3>Web Interface download</h3>
                <ol>
                   <li>Download the default template for the web interface <a href="https://github.com/studioluff/airqualitysensor_webinterface/raw/refs/heads/main/webinterface.zip">here</a>.</li>
-                  <li>Add the folder <i>'webinterface'</i> to the root of your SD card.</li>
+                  <li>Add the folder <i>'webinterface'</i> to you SD card. Make sure it's on the top level, not inside another folder.</li>
               </ol>
               <br>
               <p>Once you've completed these steps,The SD Card should have the following structure and files:<br><br>
@@ -506,7 +506,7 @@ main {
               Here is a screencapture of the process to prepare the SD card:
               </p>
               <div class="alignCenter">
-                <video controls loop style="width:100%" webkit-playsinline playsinline>
+                <video muted controls loop style="width:100%" webkit-playsinline playsinline>
                     <source src="/images/ScreenRecording.mp4" type="video/mp4">
                     <source src="/images/ScreenRecording.webm" type="video/webm">
                     Your browser does not support the video tag.
