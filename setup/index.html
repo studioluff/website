@@ -443,6 +443,17 @@ main {
             <p>To collect data over time using an SD card, you need to set up the SD card with two key elements: the WiFi configuration file and the web interface. <br> <br>
             <img   src="/images/insertCard.jpg" width="100%">  <br>
             To get started insert the SD Card into your computer using the provided adapter if needed.</p>
+            </div>
+            <div class="spacer"></div>
+              <h3>Web Interface download</h3>
+               <ol>
+                  <li>Download the default template for the web interface <a href="https://github.com/studioluff/airqualitysensor_webinterface/raw/refs/heads/main/webinterface.zip">here</a>.</li>
+                  <li>Add the folder <i>'webinterface'</i> to you SD card. Make sure it's on the top level, not inside another folder.</li>
+              </ol>
+              <br>
+              <p>Once you've completed these steps,The SD Card should have the following structure and files:<br><br>
+              <div class="alignCenter"><img src="/images/filestructure.png" width="100%"></div><br><br>
+               <div class="column">
               <h3>Config File Generation</h3>
               <ul>
                   <li>Use the form below to generate a WiFi configuration file named "wifi_credentials.txt".</li>
@@ -464,15 +475,6 @@ main {
               <button onclick="generateWifiCredentials()">Generate</button>
               </div>
               </div>
-            <div class="spacer"></div>
-              <h3>Web Interface download</h3>
-               <ol>
-                  <li>Download the default template for the web interface <a href="https://github.com/studioluff/airqualitysensor_webinterface/raw/refs/heads/main/webinterface.zip">here</a>.</li>
-                  <li>Add the folder <i>'webinterface'</i> to you SD card. Make sure it's on the top level, not inside another folder.</li>
-              </ol>
-              <br>
-              <p>Once you've completed these steps,The SD Card should have the following structure and files:<br><br>
-              <div class="alignCenter"><img src="/images/filestructure.png" width="100%"></div><br><br>
               Now you are ready to insert the SD card into your sensor. Connect the sensor to power, and it will connect to the local network via WiFi.</p>
     <p>To access the web interface, go to: <a href="http://airqualitysensor.local" class="reachSensorAt" target="_blank"><strong>airqualitysensor.local</strong></a></p>
               <br><br>
