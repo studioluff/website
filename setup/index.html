@@ -371,32 +371,6 @@ main {
   margin-bottom: 1em;
         }
 </style>
-<script>
-  function generateTimeConfig() {
-    const date = new Date();
-    const timestamp = date.getTime() / 1000;
-    const text = `timestamp: ${timestamp}`;
-    const filename = "time_config.txt";
-    downloadTextFile(text, filename);
-  }
-  function generateWifiCredentials() {
-    const ssid = document.getElementById("ssid").value;
-    const pass = document.getElementById("pass").value;
-    const localname = document.getElementById("localname").value;
-    const timeStamp = Date.now();
-    const text = `ssid:${ssid}\npass:${pass}\nlocalname:${localname}\ntimestamp:${timeStamp}`;
-    const filename = "wifi_credentials.txt";
-    downloadTextFile(text, filename);
-  }
-  function downloadTextFile(text, filename) {
-    const blob = new Blob([text], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.download = filename;
-    link.href = url;
-    link.click();
-  }
-</script>
 <div class="page-content">
   <h1>Air Quality Sensor - User Guide</h1>
   <img src="/images/long-image.jpg" width="100%">
@@ -562,12 +536,29 @@ main {
             // Allow only alphanumeric characters, hyphens, and underscores
             return /^[a-zA-Z0-9-_]*$/.test(value);
         }
+        function isValidLength(value) {
+          // Enforce a minimum length of 2 characters
+          if (value.length >= 2) {
+                return true;
+            } else {
+                return false;
+            }
+        }
 
         function updateLinks() {
             const inputValue = input.value.trim();
             
             if (isValidInput(inputValue)) {
-                const finalValue = inputValue || 'airqualitysensor';
+              let finalValue;
+              if(!isValidLength(inputValue))
+              {
+                console.log("input value is invalid");
+                finalValue = "airqualitysensor";
+              }
+              else
+              {
+                finalValue = inputValue ;
+              }
                 links.forEach(link => {
                     link.href = `http://${finalValue}.local`;
                     link.textContent = `${finalValue}.local`;
@@ -578,6 +569,35 @@ main {
                 input.classList.add('invalid-input');
                 errorMessage.style.display = 'block';
             }
+        }
+         function generateTimeConfig() {
+          const date = new Date();
+          const timestamp = date.getTime() / 1000;
+          const text = `timestamp: ${timestamp}`;
+          const filename = "time_config.txt";
+          downloadTextFile(text, filename);
+        }
+        function generateWifiCredentials() {
+          const ssid = document.getElementById("ssid").value;
+          const pass = document.getElementById("pass").value;
+         
+          var localname = document.getElementById("localname").value;
+          if(!isValidLength(localname))
+          {
+            localname = "airqualitysensor";
+          }
+          const timeStamp = Date.now();
+          const text = `ssid:${ssid}\npass:${pass}\nlocalname:${localname}\ntimestamp:${timeStamp}`;
+          const filename = "wifi_credentials.txt";
+          downloadTextFile(text, filename);
+        }
+        function downloadTextFile(text, filename) {
+          const blob = new Blob([text], { type: "text/plain" });
+          const url = URL.createObjectURL(blob);
+          const link = document.createElement("a");
+          link.download = filename;
+          link.href = url;
+          link.click();
         }
 
         // Set initial value
