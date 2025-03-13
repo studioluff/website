@@ -206,6 +206,28 @@ main {
 .spacer {
     min-height: 20px;
 }
+
+.buy-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+}
     </style>
 </head>
 
@@ -215,15 +237,67 @@ main {
         <div class="page-content">
   <h1>Air Quality Sensor</h1>
 <div class="subtitle">A beautiful Air Quality Sensor for the home, customizable, hackable, open.</div>
-<p>The Air Quality Sensor by studio LUFF is a beautiful home object that helps you discover how air quality is affecting your environment. Air is an invisible life support system that we mostly give for granted. With this sensor people will be able to monitor their indoor air quality, augmenting their senses to be able to perceive the quality of the air.</p>
-<br>
-<div style="text-align:left;">Check out the project on <a href="https://www.kickstarter.com/projects/pierdr/air-quality-sensor-by-studio-luff" target="_blank"><img src="/images/kickstarter-logo-green.png" style="width: 180px;position: relative;top: 3px;"> </a></div>
-<br><br> 
-<div style="text-align:left;">If you are here because you got an Air Quality Sensor here is the <a href="/setup/">user guide</a>.</div>
-<br>
+<p>The Air Quality Sensor by studio LUFF is a beautiful home object that helps you discover how air quality is affecting your environment. Air is an invisible life support system that we mostly give for granted. With this sensor kit people will be able to monitor their indoor air quality, augmenting their senses to be able to perceive the quality of the air. We are using one of the most accurate sensors available, the Plantower PMS7003, our project is designed to reliably and precisely read the air quality of your home.</p>
 <img src="/images/air-quality-sensor.jpg" class="inline-image" >
 <br>
+<div style="text-align:left;">The project was launched on <a href="https://www.kickstarter.com/projects/pierdr/air-quality-sensor-by-studio-luff" target="_blank"><img src="/images/kickstarter-logo-green.png" style="width: 180px;position: relative;top: 3px;"></a> in 2024 and if you are here because you got an Air Quality Sensor you can find the user guide at this <a href="/setup/">link</a>. </div>
+<br>
+<img src="/images/detail.jpg" class="inline-image" >
+The air quality is displayed on the LED dial, reflected on the wall. The visualization is based on the respective level in the AQI scale (more below). The pattern on the sensor evokes the suspended particulate matter.
+<br>
 <!-- <img src="/images/img1.jpg"  class="inline-image"  alt="image of the air quality sensor"> -->
+<div class="buy-button">
+  <a href="https://www.kickstarter.com/projects/pierdr/air-quality-sensor-by-studio-luff" class="button" target="_blank">Buy Now</a>
+</div>
+<h3>HOW IT WORKS</h3>
+<br>
+<b>1.</b> Simply tap the center button to see the current air quality level.
+<div class="spacer"></div>
+ <video autoplay muted loop style="width:100%" muted webkit-playsinline playsinline>
+                    <source src="/images/tapNoAudio.mp4" type="video/mp4">
+                    <source src="/images/tapNoAudio.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+<div class="spacer"></div>
+<div class="spacer"></div>
+<p><b>2.</b> If the air reaches above 50 in the AQI scale, you are going to be notified by a subtle animation. You can tap to dismiss it.</p>
+ <div class="spacer"></div>
+  <video autoplay muted loop style="width:100%" webkit-playsinline playsinline>
+                    <source src="/images/alertNoAudio.mp4" type="video/mp4">
+                    <source src="/images/alertNoAudio.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="spacer"></div>
+<div class="spacer"></div>
+<b>3.</b>  We believe that the main insights are gathered over time, that is why the Air Quality Sensor comes with an onboard SD card slot to save historical data.
+   <div class="spacer"></div>
+<div class="spacer"></div>
+<b>4.</b>  The Air Quality Sensor can be added to your WiFi network, and a web interface can be accessed via your local network; for your privacy there are no servers, the data is stored only locally.
+<div class="spacer"></div>
+<img src="/images/webInterface.jpg" class="inline-image" >
+<h3>AIR QUALITY</h3>
+As we explored sensors and electronics we started to be immersed in the literature surrounding air quality and we realized how widespread and important air quality is. According to health and government agencies and many scientific papers, air pollution is linked to a number of symptoms like:
+<ul>
+   <li>Premature death in people with heart or lung disease</li>
+   <li>Nonfatal heart attacks</li>
+   <li>Irregular heartbeat</li>
+   <li>Aggravated asthma</li>
+   <li>Decreased lung function</li>
+   <li>Increased respiratory symptoms, such as irritation of the airways, coughing, or difficulty breathing</li>
+</ul>
+<p>You can check on the <a href="https://www.epa.gov/air-quality">EPA website</a> to learn more. Air quality is a complex issue, and there are many parameters affecting it. The most notable ones are VOCs (volatile organic compounds), ozone, NOx (nitrogen oxides), but the most recognized one is particulate matter, where the suspension in the air of particles smaller than 2.5 microns can pass from our respiratory system into our bloodstream, causing the above-mentioned symptoms.</p>
+<p>That is why we wanted to create a sensor that measures particulate matter. Online there are websites tracking particulate matter at city scale, but with our experience we learned how this is a <span class="bold">hyper-localized problem</span>, it can change block to block and even home to home; that is why the Air Quality Sensor is a tool that helps you understand the air you are actually breathing, and should be in every house.
+<img src="/images/AQI-Scale.jpg" class="inline-image" ><br>
+The AQI scale is based on reading particulate matter, and it's color coded according to national guidelines. In the sensor we are always reporting the AQI scale accordion to United States standards but we are also always providing the raw reading of ppm2.5, ppm10.0 and ppm1.0.</p>
+<div class="spacer"></div>
+<h3>MY JOURNEY WITH AIR QUALITY</h3>
+<img src="/images/img5bis.jpg" class="inline-image" >
+My story with air pollution began when I moved to the west coast of the United States. As I learned more about the surrounding environment, I became increasingly interested in the problem of air pollution. As a designer and technologist, I approached the topic by purchasing air quality modules and positioning them in my living room. I started noticing how air quality was affecting headaches and sore throats.<br><br>
+<img src="/images/img4.jpg" class="inline-image" >
+The pivotal event that pushed me to create a sensor people could use beyond just my living room happened during the wildfires of 2020, when extremely unhealthy air levels made hunting for spaces with good air quality a necessity. This increased awareness made me more conscious about when to open windows or when to start an air purifier. That is why I started working to spread these insights and develop a sensor that can live in many more homes.
+<br><br>
+<img src="/images/imgtop2.jpg" class="inline-image" >
+<br>
 <h3>A BETTER APPROACH IN BUILDING TECHNOLOGY</h3>
 This project is inspired by the <a href="https://medium.com/@pierdr/six-principles-for-sustainable-computing-0b52cce4414f" target="_blank">Six Principles for Sustainable Computing</a> that I co-wrote with Zaza Zuilhof, who is an experience designer at Apple.
 <br><br>
@@ -236,31 +310,21 @@ We are using top-of-the-line microcontrollers that are going to be supported for
 <h4>Minimize materials</h4>
 Our aesthetic aims to create a simple and effective device, without requiring injection molding or other expensive casings. Less is more.
 <h4>Inspire tinkering</h4>
-The Air Quality Sensor by studio LUFF wants you to be involved, not just be a hands-off product. It invites tinkering at many different levels. You can just connect the sensor and assemble it out of the box, and it will work, but you can also customize the web interface by simply changing files on the SD card or writing your own code in Arduino. We have included an "extension header" that allows creative to expand the sensor board with other peripherals. The architecture, software and hardware, invites customization and the code of the sensor is going to be open-source for the backers.
-<h3>MY JOURNEY WITH AIR QUALITY</h3>
-<img src="/images/img5bis.jpg" class="inline-image" >
-My story with air pollution began when I moved to the west coast of the United States. As I learned more about the surrounding environment, I became increasingly interested in the problem of air pollution. As a designer and technologist, I approached the topic by purchasing air quality modules and positioning them in my living room. I started noticing how air quality was affecting headaches and sore throats.<br><br>
-<img src="/images/img4.jpg" class="inline-image" >
-The pivotal event that pushed me to create a sensor people could use beyond just my living room happened during the wildfires of 2020, when extremely unhealthy air levels made hunting for spaces with good air quality a necessity. This increased awareness made me more conscious about when to open windows or when to start an air purifier. That is why I started working to spread these insights and develop a sensor that can live in many more homes.
-<br><br>
-<img src="/images/imgtop2.jpg" class="inline-image" >
-<br>
-<h3>Acknowledgments </h3>
-<p>This project would have not be possible without the relentless help from close collaborators that have inputed energies and supported me in concepting, designing, strategizing, engineering and manufacturing this product.</p>
-<p>Special thanks to:<br></p>
-<ul>
-<li><a href="https://zaza.zuilhof.nl/">Zaza Zuilhof</a><br></li>
-<li><a href="https://www.rubenvandervleuten.com/">Ruben van der Vleuten</a><br></li>
-<li><a href="https://medium.com/@acerruto">Antonio Cerruto</a><br></li>
-<li><a href="https://www.mia-pond.com/">Mia Pond</a><br></li>
-<li><a href="https://kameronburk.com/">Kam Burk</a><br></li>
-<li><a href="https://lorsignol.xyz/">Felix Lorsignol</a></li>
+The Air Quality Sensor by studio LUFF it invites tinkering and the software and hardware architecture invites customization of the code of the sensor since its open source and compatible with Arduino. 
+<div class="spacer"></div>
+<img src="/images/tinker-arduino.jpg" class="inline-image" >
+<div class="spacer"></div>
+<h4>Made in Italy</h4>
+<p>The Air Quality Sensor is fully manufactured in Italy to ensure quality and fairness. Each unit is assembled with attention to detail, ensuring both reliability and aesthetic quality. The factory where the Air Quality Sensor is built is socially and environmentally sustainable.</p>
+<img src="/images/factory.jpg" class="inline-image" >
+<div class="spacer"></div>
 </ul>
 </div>
         <div class="spacer"></div>
     </main>
     <div class="links">
-        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/setup/">User Guide</a>
     </div>
 </body>
 

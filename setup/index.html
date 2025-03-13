@@ -206,17 +206,38 @@ main {
 .spacer {
     min-height: 20px;
 }
+
+.buy-button {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.button {
+    display: inline-block;
+    background-color: #222;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #555;
+}
     </style>
 </head>
 
 <body>
- 
     <main>
         <style>
   body{
   overflow: scroll;
   color:#333;
-  font-size:1.2em;
+
   }
   label {
     display: inline-block;
@@ -369,6 +390,9 @@ main {
   list-style-type: none;
   font-family: monospace;
   margin-bottom: 1em;
+        }
+        .page-content{
+            font-size:1.2em;
         }
 </style>
 <div class="page-content">
@@ -612,7 +636,7 @@ main {
         <div class="spacer"></div>
     </main>
     <div class="links">
-        <a href="/">Home</a>
+        <a href="/about/">About</a>
     </div>
 </body>
 
